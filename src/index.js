@@ -1,13 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import "./index.css";
+import Warehouse from "./Warehouse";
+import Detail from "./Detail";
+import reportWebVitals from "./reportWebVitals";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="*" element={<Navigate to="/warehouse" />} />
+        <Route path="warehouse" element={<Warehouse />} />
+        <Route path="warehouse/:warehouseId" element={<Detail />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
