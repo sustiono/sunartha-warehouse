@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
 
 import "./index.css";
 import Warehouse from "./Pages/Warehouse";
@@ -32,19 +31,6 @@ const theme = createTheme({
     },
   },
 });
-
-function RouteWrapper({ element: Component, layout: Layout, ...rest }) {
-  return (
-    <Route
-      {...rest}
-      render={(props) => (
-        <Layout {...props}>
-          <Component {...props} />
-        </Layout>
-      )}
-    />
-  );
-}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
