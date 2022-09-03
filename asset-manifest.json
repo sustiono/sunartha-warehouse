@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/sunartha-warehouse/static/css/main.4c5d028a.css",
+    "main.js": "/sunartha-warehouse/static/js/main.fe75af15.js",
+    "static/js/787.a76bb826.chunk.js": "/sunartha-warehouse/static/js/787.a76bb826.chunk.js",
+    "index.html": "/sunartha-warehouse/index.html",
+    "main.4c5d028a.css.map": "/sunartha-warehouse/static/css/main.4c5d028a.css.map",
+    "main.fe75af15.js.map": "/sunartha-warehouse/static/js/main.fe75af15.js.map",
+    "787.a76bb826.chunk.js.map": "/sunartha-warehouse/static/js/787.a76bb826.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4c5d028a.css",
+    "static/js/main.fe75af15.js"
+  ]
+}
