@@ -27,7 +27,7 @@ function Warehouse() {
       >
         Warehouse
       </Typography>
-      <WarehouseList warehouseData={warehouseData} />;
+      <WarehouseList warehouseData={warehouseData} />
     </>
   );
 }

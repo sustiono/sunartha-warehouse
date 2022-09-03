@@ -12,6 +12,7 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 
 import AssuredWorkloadRoundedIcon from "@mui/icons-material/AssuredWorkloadRounded";
 
@@ -27,7 +28,12 @@ const drawer = (
           <ListItemIcon>
             <AssuredWorkloadRoundedIcon sx={{ color: "#fff" }} />
           </ListItemIcon>
-          <ListItemText primary="Warehouse" />
+          <Link
+            to="/warehouse"
+            style={{ color: "inherit", textDecoration: "none" }}
+          >
+            <ListItemText primary="Warehouse" />
+          </Link>
         </ListItemButton>
       </ListItem>
     </List>

@@ -8,11 +8,6 @@ const columns = [
     field: "WarehouseID",
     headerName: "ID",
     width: 150,
-    renderCell: ({ row: { WarehouseID } }) => (
-      <Link to={`/warehouse/${WarehouseID}`} style={{ color: "#0057B7" }}>
-        {WarehouseID}
-      </Link>
-    ),
   },
   {
     field: "Branch",
@@ -34,6 +29,11 @@ const columns = [
     flex: 1,
   },
   {
+    field: "ReplenishmentClass",
+    headerName: "Replenishment Class",
+    flex: 1,
+  },
+  {
     field: "LastSync",
     headerName: "Last Sync",
     flex: 1,
@@ -45,21 +45,34 @@ const columns = [
       return `${dates[2]}-${dates[1]}-${dates[0]}`;
     },
   },
+  {
+    field: "LastModifiedDateTime",
+    headerName: "Last Modified",
+    flex: 1,
+    valueGetter: ({ row: { LastSync } }) => {
+      const dates = new Date(LastSync)
+        .toISOString()
+        .substring(0, 10)
+        .split("-");
+      return `${dates[2]}-${dates[1]}-${dates[0]}`;
+    },
+  },
 ];
 
-const WarehouseListDetail = ({ warehouseData }) => {
-  const rpp = 10;
+const WarehouseDetail = ({ warehouseDetail }) => {
+  const rpp = 1;
   return (
-    <Box style={{ height: 108 + rpp * 52.3 + "px" }}>
+    <Box style={{ height: 108 }}>
       <DataGrid
-        rows={warehouseData}
+        rows={[warehouseDetail]}
         pageSize={rpp}
         columns={columns}
         disableSelectionOnClick
+        hideFooter
         getRowId={(row) => row.WarehouseID}
       />
     </Box>
   );
 };
 
-export default WarehouseListDetail;
+export default WarehouseDetail;
