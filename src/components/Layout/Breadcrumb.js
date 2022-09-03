@@ -5,6 +5,7 @@ import { useLocation, Link } from "react-router-dom";
 const Breadcrumb = () => {
   const { pathname } = useLocation();
   const pathnames = pathname.split("/");
+  const warehouseId = window.location.pathname.split("/").pop();
 
   return (
     <Breadcrumbs aria-label="breadcrumb">
@@ -12,16 +13,16 @@ const Breadcrumb = () => {
         let linkText = path || "Home";
         linkText = linkText[0].toUpperCase() + linkText.slice(1).toLowerCase();
 
-        return index === pathnames.length - 1 && pathnames.length > 2 ? (
+        return index === pathnames.length - 1 ? (
           <Typography key={path} color="text.primary">
-            WarehouseId
+            {pathnames.length > 2 ? warehouseId : "Warehouse"}
           </Typography>
         ) : (
           <Link
             to={`/${path}`}
             key={path}
             style={{
-              color: "inherit",
+              color: "#0057B7",
               textDecoration: "none",
             }}
           >
